@@ -33,7 +33,7 @@ if word[2] == character:
 if word[3] == character:
     num_of_matches = num_of_matches + 1
 if word[4] == character:
-   num_of_matches = num_of_matches + 1
+    num_of_matches = num_of_matches + 1
 if num_of_matches == 0:
     print("No instances of " + character + " found in " + word)
 if num_of_matches == 1:
