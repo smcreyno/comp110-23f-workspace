@@ -1,6 +1,6 @@
 """EX02 One-Shot Wordle."""
 
-__author__ = 730642974
+__author__ = "730642974"
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
@@ -54,3 +54,4 @@ else:
     # if you didn't get it wrong, you got it right! You will have a string of green boxes as your trophy.
     print(str(guess_emoji))
     print("Woo! You got it!")
+    exit()
