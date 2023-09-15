@@ -5,16 +5,16 @@ __author__ = "730642974"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-secret: str = "python"
+secret: str = "aphid"
 guess: str = input(f"What is your {str(len(secret))}-letter guess? ")
 secret_idx: int = 0
 guess_emoji: str = ""
 alt_idx: int = 0
 while len(guess) != len(secret):
-    # when the length of the guess word isn't the same as the length of the secret word
+    # when the length of the guess word isn't the same as the length of the secret word, try again.
     print(f"That was not {str(len(secret))} letters! Try again: ")
     guess = str(input())
-    # prompt for new guess that is the length of the secret word
+    # prompt for new guess that is the length of the secret word.
 while secret_idx < len(secret):
     # when the index of the secret word is less than the length of the secret:
     if guess[secret_idx] == secret[secret_idx]:
@@ -23,12 +23,12 @@ while secret_idx < len(secret):
     else:
         close_guess: bool = False
         while not (close_guess is True) and (alt_idx < len(secret)):
-            # when you don't have a correct character out of place AND the index of the guess is less than the length of the secret word:
+            # when you don't have a correct character in the wrong index AND the index of the guess is less than the length of the secret word:
             if secret[alt_idx] == guess[secret_idx]:
-                # if the alternate character of the secret word is the same as the character of the guess, you have a close guess
+                # if the alternate index of the secret word is the same as the index of the guess, you have a close guess
                 close_guess = True
             elif secret[alt_idx] != guess[secret_idx]:
-                # else, if the alternate charcter of secret is not the same as the guess character, check the next index
+                # else, if the alternate index of secret is not the same as the guess index, check the next index
                 alt_idx = alt_idx + 1
         if alt_idx >= len(secret):
             # if the alternate index is at least the length of the secret word, reset it to zero and reevaluate for letters in prior positions that the first loop may have missed.
@@ -46,10 +46,10 @@ while secret_idx < len(secret):
     secret_idx = secret_idx + 1
     # proceed to increase the index to evaluate the next character
 if secret != guess:
-    # if you guessed wrong, print your emojis to show what characters were right, and exit
+    # if you guessed wrong, print your emojis to show what characters may have been right, and exit
     print(str(guess_emoji))
     print("Not quite. Play again soon!")
 else:
-    # if you didn't get it wrong, you got it right! You will have a string of green boxes as your trophy.
+    # if you didn't get it wrong, you got it right! You will have a string of green boxes as your trophy and the program will cheer for you.
     print(str(guess_emoji))
     print("Woo! You got it!")
