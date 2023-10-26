@@ -1,6 +1,6 @@
 """Summing the elements of a list using different loops."""
 
-__author__ = 730642974
+__author__ = "730642974"
 
 
 def w_sum(vals: list[float]) -> float:
