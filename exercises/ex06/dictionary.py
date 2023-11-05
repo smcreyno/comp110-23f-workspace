@@ -7,6 +7,8 @@ def invert(my_dict: dict[str, str]) -> dict[str, str]:
     """Invert the keys and values of a given dictionary."""
     check_dict: dict[str, int] = {}
     new_dict: dict[str, str] = {}
+    if my_dict == {}:
+        return {}
     for keys in my_dict:
         if my_dict[keys] in check_dict:
             check_dict[my_dict[keys]] += 1
@@ -65,6 +67,10 @@ def alphabetizer(alpha_list: list[str]) -> dict[str, list[str]]:
 
 def update_attendance(attend_dict: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """Given a dict, mutate and return that dict with new attendance info."""
+    if day == "":
+        return attend_dict
+    if student == "":
+        return attend_dict
     for elem in attend_dict:
         if day == elem:
             if not (student in attend_dict[elem]):
