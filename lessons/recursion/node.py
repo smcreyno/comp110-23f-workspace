@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__author__ = "730642974"
+
 
 class Node:
     """My Node class for linked lists."""
@@ -22,11 +24,20 @@ class Node:
         else:
             return f"{self.data} -> {self.next}"
         
-    def head(self):
-        return None
+    def head(self) -> int:
+        """Returns data attribute for first element in the linked list."""
+        return self.data
     
-    def tail(self):
-        return None
+    def tail(self) -> Node | None:
+        """Return a linked list of every element minus the head."""
+        if self.data is None:
+            return self.data
+        else: 
+            return self.next
     
-    def last(self):
-        return None
+    def last(self) -> int:
+        """Return the data of the last element in the linked list."""
+        if self.next is None:
+            return self.data
+        elif self.next is not None:
+            return self.next.last()
